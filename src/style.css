@@ -22,7 +22,7 @@
 .start h1{
     font-weight: 900;
     font-size: 3rem;
-    background-image: url(./assests/triangle.png);
+    background-image: url(./Assests/triangle.png);
     background-size: cover;
     -webkit-background-clip: text;
     background-clip: text;
@@ -596,7 +596,7 @@
 .end h1{
     font-size: 4rem;
     filter: drop-shadow(#97FFF4);
-    background-image: url(./assests/water.jpg);
+    background-image: url(./Assests/water.jpg);
     background-size: cover;
     -webkit-background-clip: text;
     background-clip: text;
