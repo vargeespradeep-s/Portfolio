@@ -2,8 +2,6 @@ import React from 'react';
 import { FaGithub , FaLinkedin, FaFacebook , FaInstagram } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
 
-
-
 export default function Footer() {
   return (
     <footer className="end dis-fl">

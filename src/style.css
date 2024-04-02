@@ -531,7 +531,7 @@
         padding: 4.5em 2em 3em !important;
     }
     .pro-clr{
-        font-size: 40px;
+        font-size: 27px;
     }
 }
 @media screen and (min-width:500px ) and (max-width:900px){
@@ -563,6 +563,7 @@
     border: 5px solid rebeccapurple;
     border-radius: 1rem;
 }
+
 @media screen and (min-width:300px ) and (max-width:500px){
     .fur-lk{
         padding: 4.5em 1em 3em !important;
