@@ -1,13 +1,24 @@
-import React from "react";
-import { Container ,Col, Row,Form,Button  } from "react-bootstrap";
+import React ,{useState} from "react";
+import { Container ,Col, Row  } from "react-bootstrap";
 import { FiMapPin } from "react-icons/fi";
 import { CiMail } from "react-icons/ci";
 import { IoCallOutline } from "react-icons/io5";
 
 
-export default function Project(){
 
-        
+export default function Project(){
+ 
+const [name,setName] =useState("");
+const [email,setEmail]=useState("");
+const [message,setMessage]=useState("");
+
+const handleReset =()=>{
+  setName("");
+  setEmail("");
+  setMessage("");
+};
+
+     
   return(
     <section className="d-flex justify-content-center align-items-center flex-column container-fluid fur-lk" id="contact">
           <h1>CONTACT ME</h1>
@@ -36,35 +47,27 @@ export default function Project(){
 
               {/* ----------2nd ------------------- */}
               <Col xs={12} sm={11} md={6} lg={6} xl={6} xxl={6} className="bx-clr">
-              <Form>
-                {/* ----------------name--------------------------------------- */}
-                  <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                          <Form.Label>Enter Your Name</Form.Label>
-                       <Form.Control type="text" placeholder="Enter Your Name" />
-                      </Form.Group>
-                      {/* ----------------------------email----------------------------- */}
-                      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                          <Form.Label>Email address</Form.Label>
-                       <Form.Control type="email" placeholder="Enter Your Email Address" />
-                      </Form.Group>
-                    {/* --------------------------phone number------------------------- */}
-                      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                          <Form.Label>Phone Number</Form.Label>
-                       <Form.Control type="tel" placeholder="Enter Your Number" />
-                      </Form.Group>
-                      {/* -----------------------------------message-------------------------------- */}
-                      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                         <Form.Label> Message </Form.Label>
-                          <Form.Control as="textarea" rows={3} />
-                      </Form.Group>
-                  {/*-----------------------button------------------------------------  */}
-                    <div className="d-flex justify-content-evenly align-items-center p-3" >
-                     <Button as="input" type="submit" value="Submit" />
-                     <Button as="input" type="reset" value="Reset" />
-
-                    </div>
-                 </Form>     
-
+              <form id="form"   action="https://formspree.io/f/xzbnjkov" method="POST" >
+                {/* name */}
+              <div className="mb-3">
+                <label htmlFor="name" className="form-label">Name</label>
+                <input type="name" name="name" className="form-control" id="name" placeholder="Enter your name" required onChange={(event)=>setName(event.target.value)} value={name}/>
+              </div>
+              {/* email */}
+              <div className="mb-3">
+                <label htmlFor="email" className="form-label">Email address</label>
+                <input type="email" name="email" className="form-control" id="email" placeholder="Enter your email-address" required onChange={(event)=>setEmail(event.target.value)} value={email}/>
+              </div>
+              {/* message */}
+              <div className="mb-3">
+                <label htmlFor="message" className="form-label">message</label>
+                <textarea name="message" className="form-control" id="message" rows="3" placeholder="Enter your message" required onChange={(event)=>setMessage(event.target.value)} value={message}></textarea>
+              </div>
+              <div className="d-flex justify-content-between align-items-center gap-3">
+                  <input className="btn btn-primary w-50" type="submit" value="Send"/>
+                  <input className="btn btn-primary w-50" type="reset" value="Reset" onClick={handleReset}/>
+              </div>
+              </form>
               </Col>
           </Row>
       </Container>
